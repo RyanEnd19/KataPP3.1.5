@@ -84,4 +84,8 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(userDto, User.class);
     }
+    @Override
+    public boolean checkPassword(User user, String rawPassword) {
+        return passwordEncoder.matches(rawPassword, user.getPassword());
+    }
 }

@@ -21,4 +21,6 @@ public interface UserService {
     Optional<User> findByUsername(String username);
 
     User convertToUser(UserDto userDto);
+
+    boolean checkPassword(User user, String rawPassword) ;
 }
